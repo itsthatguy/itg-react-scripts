@@ -33,7 +33,7 @@ module.exports = {
     contentBase: paths.appBuild,
     filename: 'static/js/bundle.js',
     hot: true,
-    publicPath: publicPath,
+    publicPath: '/',
   },
 
   entry: [
@@ -47,7 +47,7 @@ module.exports = {
     path: paths.appBuild,
     pathinfo: true,
     filename: 'static/js/bundle.js',
-    publicPath: publicPath,
+    publicPath: '/',
   },
 
   plugins: union(

@@ -19,7 +19,7 @@ const nodePaths = (process.env.NODE_PATH || '')
 .filter(folder => !path.isAbsolute(folder))
 .map(resolveApp);
 
-module.exports = {
+const PATHS = {
   appRoot        : APP_ROOT,
   appSrc         : resolveApp(APP_SRC),
   appPublic      : resolveApp('public'),
@@ -33,3 +33,5 @@ module.exports = {
   appNodeModules : resolveApp('node_modules'),
   ownNodeModules : resolveOwn('node_modules'),
 };
+
+module.exports = PATHS;
