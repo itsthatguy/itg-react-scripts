@@ -13,7 +13,7 @@ module.exports = [
           baseConfig: {
             extends: ['adorable'],
           },
-          useEslintrc: false,
+          useEslintrc: true,
         }
       }
     ]
