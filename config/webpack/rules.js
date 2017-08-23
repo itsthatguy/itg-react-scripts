@@ -1,5 +1,11 @@
-const path = require('path');
 const paths = require('../paths');
+
+let appEslintOptions;
+try {
+  appEslintOptions = require(paths.appEslintOptionsPath);
+} catch (error) {
+  appEslintOptions = {};
+}
 
 module.exports = [
   { parser: { requireEnsure: false } },
@@ -16,7 +22,8 @@ module.exports = [
           },
           useEslintrc: true,
         },
-        require(path.resolve(paths.appRoot, 'eslint-loader-config.js'))),
+        appEslintOptions,
+      ),
       }
     ]
   },
