@@ -22,7 +22,7 @@ module.exports = [
           },
           useEslintrc: true,
         },
-        appEslintOptions,
+        appEslintOptions
       ),
       }
     ]
