@@ -1,3 +1,4 @@
+const path = require('path');
 const paths = require('../paths');
 
 module.exports = [
@@ -9,12 +10,13 @@ module.exports = [
     use: [
       {
         loader: 'eslint-loader',
-        options: {
+        options: Object.assign({
           baseConfig: {
             extends: ['adorable'],
           },
           useEslintrc: true,
-        }
+        },
+        require(path.resolve(paths.appRoot, 'eslint-loader-config.js'))),
       }
     ]
   },

@@ -12,7 +12,6 @@ module.exports = [
   new InterpolateHtmlPlugin(env.raw),
   new webpack.DefinePlugin(env.stringified),
   new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.NoEmitOnErrorsPlugin(),
   new ProgressBarPlugin({
     format: `  Compiling (${chalk.yellow(':percent')}) [:bar] `,
   }),

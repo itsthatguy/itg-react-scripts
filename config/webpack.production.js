@@ -27,6 +27,7 @@ module.exports = {
 
   plugins: [
     ...plugins,
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
 
