@@ -1,18 +1,14 @@
 const webpack          = require('webpack');
+const path             = require('path');
 const paths            = require('./paths');
 const plugins          = require('./webpack/plugins');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rules            = require('./webpack/rules');
 const babelLoaderRules = require('./webpack/rules/babel-loader');
 
 module.exports = {
   devtool: 'source-map',
-
-  devServer: {
-    contentBase: paths.appBuild,
-    filename: 'static/js/bundle.js',
-    publicPath: publicPath,
-  },
 
   entry: [
     paths.appIndexJs,
@@ -22,13 +18,28 @@ module.exports = {
     path: paths.appBuild,
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
-    publicPath: publicPath,
   },
 
   plugins: [
     ...plugins,
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: paths.appHtml,
+      minify: {
+        removeComments: true,
+        // collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
+    }),
   ],
 
   module: {
@@ -45,7 +56,7 @@ module.exports = {
       path.resolve(process.cwd(), paths.appRoot)
     ].concat(paths.nodePaths),
 
-    extensions: ['', '.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json']
   },
 
   resolveLoader: {
