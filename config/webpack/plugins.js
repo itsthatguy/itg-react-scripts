@@ -1,14 +1,16 @@
 const webpack = require('webpack');
 const chalk = require('chalk');
+const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+
+const getClientEnvironment = require('../env');
+const env = getClientEnvironment();
 
 module.exports = [
   new CaseSensitivePathsPlugin(),
-  new webpack.DefinePlugin({
-    CONFIG: JSON.stringify(process.env.NODE_ENV || 'development')
-  }),
+  new InterpolateHtmlPlugin(env.raw),
+  new webpack.DefinePlugin(env.stringified),
   new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.NoEmitOnErrorsPlugin(),
   new ProgressBarPlugin({
