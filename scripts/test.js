@@ -2,9 +2,9 @@ process.env.NODE_ENV = 'test';
 
 require('../config/env');
 
+const paths = require('../config/paths');
 const path = require('path');
 const jest = require('jest');
-const paths = require('../config/paths');
 const jestConfig = require('../config/jest');
 
 process.on('unhandledRejection', (err) => {

@@ -36,26 +36,25 @@
     "css-loader": "^0.28.5",
     "detect-port": "^1.1.1",
     "dotenv": "^4.0.0",
-    "eslint": "^3.19.0",
+    "enzyme": "^2.9.1",
     "eslint-config-adorable": "^0.0.5",
     "eslint-loader": "^1.7.1",
+    "eslint": "^3.19.0",
     "html-webpack-plugin": "^2.30.1",
     "interpolate-html-plugin": "^2.0.0",
+    "jest": "^20.0.4",
     "lodash": "^4.17.4",
     "progress-bar-webpack-plugin": "^1.10.0",
     "react-dev-utils": "^0.5.2",
+    "react-dom": "^15.5.4",
     "react-hot-loader": "3.0.0-beta.7",
+    "react-test-renderer": "^15.6.1",
+    "react": "^15.5.4",
     "style-loader": "^0.18.2",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.3"
+    "webpack-dev-server": "^2.4.3",
+    "webpack": "^2.4.1"
   },
   "devDependencies": {
-    "enzyme": "^2.9.1",
-    "jest": "^20.0.4",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.6.1",
-    "supports-color": "^4.2.1",
     "uuid": "^3.1.0"
   }
 }
