@@ -7,8 +7,6 @@ const jest = require('jest');
 const paths = require('../config/paths');
 const jestConfig = require('../config/jest');
 
-process.env.NODE_PATH = paths.appRoot;
-
 process.on('unhandledRejection', (err) => {
   throw err;
 });
