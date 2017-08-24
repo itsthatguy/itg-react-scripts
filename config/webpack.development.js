@@ -77,7 +77,8 @@ module.exports = {
 
   resolve: {
     modules: [
-      'node_modules',
+      paths.ownNodeModules,
+      paths.appNodeModules,
       paths.appSrc,
     ].concat(paths.nodePaths),
     alias: { 'react-native': 'react-native-web' },
