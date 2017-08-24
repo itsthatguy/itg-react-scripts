@@ -20,9 +20,10 @@ module.exports = (resolve, rootDir) => {
       '^.+\\.(js|jsx)$': resolve('config/jest/babelTransform.js'),
       '^.+\\.css$': resolve('config/jest/cssTransform.js'),
     },
-    moduleDirectories: [
-      'node_modules',
-      'src',
+    modulePaths: [
+      paths.ownNodeModules,
+      paths.appNodeModules,
+      paths.appSrc,
       '__tests__',
     ],
   };
