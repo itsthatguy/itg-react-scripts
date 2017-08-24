@@ -51,11 +51,11 @@ module.exports = {
 
   resolve: {
     modules: [
-      'node_modules',
-      paths.appRoot,
-      path.resolve(process.cwd(), paths.appRoot)
+      paths.ownNodeModules,
+      paths.appNodeModules,
+      paths.appSrc,
     ].concat(paths.nodePaths),
-
+    alias: { 'react-native': 'react-native-web' },
     extensions: ['.js', '.jsx', '.json']
   },
 
