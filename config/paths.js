@@ -29,6 +29,7 @@ const PATHS = {
   appPackageJson : resolveApp('package.json'),
   appEslintOptionsPath: resolveApp('eslint-loader-config.js'),
   yarnLockFile   : resolveApp('yarn.lock'),
+  testsSetup: resolveApp(`__tests__/test-setup.js`),
 
   nodePaths      : nodePaths,
   appNodeModules : resolveApp('node_modules'),
