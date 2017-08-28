@@ -27,6 +27,8 @@ const PATHS = {
   appIndexJs: resolveApp(`${APP_SRC}/index.js`),
   appBuild: resolveApp('build'),
   appPackageJson : resolveApp('package.json'),
+  appWebpackRules: resolveApp('webpack/rules.js'),
+  appWebpackPlugins: resolveApp('webpack/plugins.js'),
   appEslintOptionsPath: resolveApp('eslint-loader-config.js'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp(`__tests__/test-setup.js`),

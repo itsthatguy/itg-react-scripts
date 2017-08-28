@@ -1,13 +1,10 @@
 const paths = require('../paths');
+const tryToLoad = require('../utils/tryToLoad');
 
-let appEslintOptions;
-try {
-  appEslintOptions = require(paths.appEslintOptionsPath);
-} catch (error) {
-  appEslintOptions = {};
-}
+const appEslintOptions = tryToLoad(paths.appEslintOptionsPath, {});
+const projectRules = tryToLoad(paths.appWebpackRules, []);
 
-module.exports = [
+const RULES = [
   { parser: { requireEnsure: false } },
   {
     test: /\.jsx?$/,
@@ -30,5 +27,8 @@ module.exports = [
   {
     test: /\.css$/,
     use: [ 'style-loader', 'css-loader' ],
-  }
+  },
+  ...projectRules,
 ];
+
+module.exports = RULES;
