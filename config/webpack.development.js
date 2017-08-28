@@ -1,18 +1,18 @@
-const webpack                       = require('webpack');
-const union                         = require('lodash').union;
-const path                          = require('path');
+const webpack = require('webpack');
+const union = require('lodash').union;
+const path = require('path');
 
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-const HtmlWebpackPlugin             = require('html-webpack-plugin');
-const InterpolateHtmlPlugin         = require('react-dev-utils/InterpolateHtmlPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 
-const paths                         = require('./paths');
-const plugins                       = require('./webpack/plugins');
+const paths = require('./paths');
+const plugins = require('./webpack/plugins');
 
-const rules                         = require('./webpack/rules');
-const babelLoaderRules              = require('./webpack/rules/babel-loader');
+const rules = require('./webpack/rules');
+const babelLoaderRules = require('./webpack/rules/babel-loader');
 
-const getClientEnvironment          = require('./env');
+const getClientEnvironment = require('./env');
 
 const BABEL_LOADER_PLUGINS_DEV = [
   require.resolve('babel-plugin-transform-react-jsx-self'),
