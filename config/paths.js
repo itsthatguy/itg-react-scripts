@@ -20,20 +20,21 @@ const nodePaths = (process.env.NODE_PATH || '')
 .map(resolveApp);
 
 const PATHS = {
-  appRoot        : APP_ROOT,
-  appSrc         : resolveApp(APP_SRC),
-  appPublic      : resolveApp('public'),
-  appHtml        : resolveApp('public/index.html'),
-  appIndexJs     : resolveApp(`${APP_SRC}/index.js`),
-  appBuild       : resolveApp('build'),
+  appRoot: APP_ROOT,
+  appSrc: resolveApp(APP_SRC),
+  appPublic: resolveApp('public'),
+  appHtml: resolveApp('public/index.html'),
+  appIndexJs: resolveApp(`${APP_SRC}/index.js`),
+  appBuild: resolveApp('build'),
   appPackageJson : resolveApp('package.json'),
+  appWebpackRules: resolveApp('webpack/rules.js'),
+  appWebpackPlugins: resolveApp('webpack/plugins.js'),
   appEslintOptionsPath: resolveApp('eslint-loader-config.js'),
-  yarnLockFile   : resolveApp('yarn.lock'),
+  yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp(`__tests__/test-setup.js`),
-
-  nodePaths      : nodePaths,
-  appNodeModules : resolveApp('node_modules'),
-  ownNodeModules : resolveOwn('node_modules'),
+  nodePaths: nodePaths,
+  appNodeModules: resolveApp('node_modules'),
+  ownNodeModules: resolveOwn('node_modules'),
 };
 
 module.exports = PATHS;
