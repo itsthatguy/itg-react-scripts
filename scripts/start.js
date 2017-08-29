@@ -50,7 +50,7 @@ function runServer(port) {
     if (err) { return console.log(chalk.red(err)); }
 
     // clear the console
-    process.stdout.write('\x1B[2J\x1B[3J\x1B[H');
+    if (process.stdout.isTTY) process.stdout.write('\x1B[2J\x1B[3J\x1B[H');
 
     console.log();
     console.log('Starting the', chalk.green(`${process.env.NODE_ENV}`), 'server on port', chalk.green(port));
