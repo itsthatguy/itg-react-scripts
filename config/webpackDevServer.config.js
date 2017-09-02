@@ -41,5 +41,5 @@ module.exports = Object.assign({},
       colors: true,
     },
   },
-  appDevServerConfig,
+  appDevServerConfig
 );
