@@ -33,6 +33,7 @@ const PATHS = {
   appEslintOptionsPath: resolveApp('eslint-loader-config.js'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp(`__tests__/test-setup.js`),
+  appJestOverrides: resolveApp('jest.config.js'),
   nodePaths: nodePaths,
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveOwn('node_modules'),
