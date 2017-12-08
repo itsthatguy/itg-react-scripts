@@ -13,6 +13,10 @@ process.on('unhandledRejection', (err) => {
 
 const argv = process.argv.slice(2);
 
+if (process.env.CI) {
+  argv.push('--forceExit');
+}
+
 if (!process.env.CI && argv.indexOf('--coverage') < 0) {
   argv.push('--watch');
 }
