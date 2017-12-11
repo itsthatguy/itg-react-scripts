@@ -1,5 +1,8 @@
 const fs = require('fs');
 const paths = require('./paths');
+const tryToLoad = require('./utils/tryToLoad');
+
+const projectRules = tryToLoad(paths.appJestOverrides, {});
 
 module.exports = (resolve, rootDir) => {
   const setupTestFrameworkScriptFile =
@@ -26,6 +29,7 @@ module.exports = (resolve, rootDir) => {
       paths.appSrc,
       '__tests__',
     ],
+    ...projectRules,
   };
 
   const config = Object.assign({},
