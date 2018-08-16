@@ -27,7 +27,7 @@ const env = getClientEnvironment(publicUrl);
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-source-map',
 
   devServer: {
     contentBase: paths.appBuild,
